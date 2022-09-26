@@ -239,10 +239,10 @@ body.dark-theme {
     cursor: pointer;
 }
 
-
-
 /* Show menu */
-
+.show-menu {
+    bottom: 2rem;
+}
 
 /* Active link */
 
