@@ -571,7 +571,7 @@
                     <i class="ri-send-plane-line"></i> Write me your project
                 </h3>
 
-                <form action="" class="contact__form" id="contact-form">
+                <form class="contact__form" id="contact-form">
                     <div class="contact__form-div">
                         <label class="contact__form-tag">Names</label>
                         <input
@@ -588,10 +588,11 @@
                     </div>
                     <div class="contact__form-div contact__form-area">
                         <label class="contact__form-tag">Project</label>
-                        <textarea
-                                name="user_project" placeholder="Write your project"
+                        <textarea name="user_project" placeholder="Write your project"
                                 id="contact-project" class="contact__form-input"></textarea>
                     </div>
+
+                    <p class="contact__message" id="contact-message"></p>
 
                     <button class="contact__button" type="submit">
                         Submit <i class="ri-arrow-right-up-line"></i>
@@ -618,7 +619,7 @@
 <script src="assets/js/swiper-bundle.min.js"></script>
 
 <!--=============== EMAIL JS ===============-->
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <!--=============== MAIN JS ===============-->
 <script src="assets/js/main.js"></script>

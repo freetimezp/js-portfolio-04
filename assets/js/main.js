@@ -56,6 +56,47 @@ let swiperTestimonial = new Swiper('.testimonial__container', {
 });
 
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form');
+const contactName = document.getElementById('contact-name');
+const contactEmail = document.getElementById('contact-email');
+const contactProject = document.getElementById('contact-project');
+const contactMessage = document.getElementById('contact-message');
+
+const sendEmail = (e) => {
+    e.preventDefault();
+
+    //check if field has a value
+    if(contactName.value === '' || contactEmail.value === '' || contactProject.value === '') {
+        //add or remove color
+        contactMessage.classList.remove('color-blue');
+        contactMessage.classList.add('color-red')
+
+        //show message
+        contactMessage.textContent = 'Write all fields please...';
+    }else{
+        //serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_lqpyxd1', 'template_ovajs56', '#contact-form', 'kk5oM2vPMYsBD367x')
+            .then(() => {
+                //show message and add color
+                contactMessage.classList.add('color-blue');
+                contactMessage.textContent = 'Message send success!';
+
+                //remove message after 5 sec
+                setTimeout(() => {
+                    contactMessage.textContent = '';
+                }, 5000)
+            }, (error) => {
+                alert('OOPS! Something has failed.. ' + error.message);
+            })
+
+        //clear all fields
+        contactName.value = '';
+        contactEmail.value = '';
+        contactProject.value = '';
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail);
 
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
